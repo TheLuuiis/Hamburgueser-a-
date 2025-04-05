@@ -3,6 +3,7 @@
 :root {
     --titulo-cursive: 'Dancing Script', cursive;
 }
+
 * {
     margin: 0;
     padding: 0;
@@ -350,6 +351,13 @@ body {
     background-color: #222831;
 }
 
+.description-menu li.active {
+    background-color: #222831;
+    color: #ffffff;
+    border-radius: 26px;
+    padding: 0.5rem 1rem;
+}
+
 /* Container - Filter */
 .container-filter {
     gap: 30px;
@@ -372,6 +380,24 @@ body {
     border-radius: 15px;
     position: relative;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+
+    opacity: 1;
+    transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out;
+    pointer-events: auto;
+}
+
+
+.card.hide {
+    opacity: 0;
+    transform: scale(0.95);
+    pointer-events: none;
+    position: absolute;
+}
+
+li[data-filter].active {
+    background: #222831;
+    color: #ffffff;
+    border-radius: 26px;
 }
 
 .card .img {
